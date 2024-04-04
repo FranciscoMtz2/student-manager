@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  lang="en"
+  th:fragment="template(title, section)"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:replace="${title}">HomeTemplate</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.rtl.css}" />
+  </head>
+  <body>
+    <nav th:replace="~{template/nav::nav}"></nav>
+    <section th:replace="${section}"></section>
+    <script type="text/javascript" th:src="@{/js/bootstrap.bundle.js}"></script>
+  </body>
+</html>

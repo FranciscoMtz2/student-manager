@@ -1,0 +1,14 @@
+<div th:replace="~{template/template::template(~{::title}, ~{::section})}">
+  <title>Create Student</title>
+  <section>
+    <form action="@{/student/create}" method="post" th:object="${student}">
+      <div th:replace="~{template/components::input('text', 'name', 'Name')}" />
+      <div
+        th:replace="~{template/components::input('password', 'password', 'Password')}"
+      />
+      <div
+        th:replace="~{template/components::input('number', 'mobile', 'Mobile')}"
+      />
+    </form>
+  </section>
+</div>
