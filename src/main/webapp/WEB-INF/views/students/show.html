@@ -1,0 +1,18 @@
+<div th:replace="~{template/template::template(~{::title}, ~{::section})}">
+  <title>Student</title>
+  <section>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Student Profile</h5>
+          <p class="card-text">
+            <strong>ID:</strong> <span th:text="${student.id}"></span><br />
+            <strong>Name:</strong><span th:text="${student.name}"></span><br />
+            <strong>COUNTRY:</strong><span th:text="${student.country}"></span><br />
+            <strong>MOBILE:</strong><span th:text="${student.mobile}"></span><br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

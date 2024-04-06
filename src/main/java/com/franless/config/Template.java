@@ -15,6 +15,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 @EnableWebMvc
 public class Template implements WebMvcConfigurer {
 
+    @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
         resolver.setApplicationContext(ApplicationContextProvider.getApplicationContext());
@@ -25,6 +26,7 @@ public class Template implements WebMvcConfigurer {
         return resolver;
     }
 
+    @Bean
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.setEnableSpringELCompiler(true);

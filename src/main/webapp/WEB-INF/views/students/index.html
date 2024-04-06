@@ -1,0 +1,33 @@
+<div th:replace="~{template/template::template(~{::title}, ~{::section})}">
+  <title>Students</title>
+  <section>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Country</th>
+          <th scope="col">Mobile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each=" student : ${students}">
+          <th scope="row" th:text="${student.id}">ID</th>
+          <td th:text="${student.name}">NAME</td>
+          <td th:text="${student.country}">COUNTRY</td>
+          <td th:text="${student.mobile}">MOBILE</td>
+          <td><a th:href="@{|/students/update/${student.id}|}">EDIT</a></td>
+          <td>
+            <form
+              th:action="@{|/students/delete/${student.id}|}"
+              th:method="DELETE"
+            >
+              <input type="hidden" name="_method" value="DELETE" />
+              <input type="submit" value="DELETE" />
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
